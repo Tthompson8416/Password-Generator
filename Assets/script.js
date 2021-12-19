@@ -40,10 +40,6 @@ resultEl.innerText = generatePassword(
 
 //Generate password function
 function generatePassword(lower, upper, number, symbol, length) {
-   // 1. Init pw var
-  // 2. Filter out unchecked types
- // 3.Loop over length call generator function for each type
-// 4. Add final pw to the pw var and retun
 
 var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
        var passwordLength = 8;
@@ -54,10 +50,6 @@ var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRST
       }
 
 let generatePassword = "";
-
-
-const typedCount = lower + upper + number + symbol;
-
 }
 
 
