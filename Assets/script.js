@@ -1,17 +1,15 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function generatePassword() {
-}
+
 
 // Testing js code DOM elements
 const resultEl = document.getElementById("password");
 const lengthEl = document.getElementById("password");
-const uppercaseEl = document.getElementById("password");
-const lowercaseEl = document.getElementById("password");
-const numbersEl = document.getElementById("password");
-const symbolsEl = document.getElementById("password");
+const uppercaseEl = document.getElementById("checkbox");
+const lowercaseEl = document.getElementById("checkbox");
+const numbersEl = document.getElementById("checkbox");
+const symbolsEl = document.getElementById("checkbox");
 const generateEl = document.getElementById("password");
 const clipboardEl = document.getElementById("password");
 
@@ -49,9 +47,10 @@ function generatePassword(lower, upper, number, symbol, length) {
 
 let generatePassword = "";
 
+
 const typedCount = lower + upper + number + symbol;
 
-console.log("typesCount: ", typesCount);
+}
 
 
 // created random lower case string
