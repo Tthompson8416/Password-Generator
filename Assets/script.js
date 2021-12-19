@@ -22,6 +22,7 @@ const randomFunc = {
   symbol: getRandomSymbol
 };
 
+// Generate event listen
 generateEl.addEventListener("click", () => {
   const length = +lengthEl.value;
   const hasLower = lowercaseEl.checked;
@@ -30,8 +31,14 @@ generateEl.addEventListener("click", () => {
   const hasSymbol = symbolsEl.checked;
 
 
-console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
+resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
+
+//Generate password 
+function generatePassword(lower, upper, number, symbol, length) {
+
+}
+
 
 // created random lower case string
 function getRandomLower() {
