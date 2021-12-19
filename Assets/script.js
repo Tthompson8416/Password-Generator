@@ -5,6 +5,35 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
 }
 
+// Testing js code DOM elements
+const resultEl = document.getElementById("result");
+const lengthEl = document.getElementById("result");
+const uppercaseEl = document.getElementById("result");
+const lowercaseEl = document.getElementById("result");
+const numbersEl = document.getElementById("result");
+const symbolsEl = document.getElementById("result");
+const generateEl = document.getElementById("result");
+const clipboardEl = document.getElementById("result");
+
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
+
+generateEl.addEventListener("click", () => {
+  const length = +lengthEl.value;
+  const hasLower = lowercaseEl.checked;
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasLower = lowercaseEl.checked;
+const hasSymbol = symbolsEl.checked;
+
+
+console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
+});
+
 // created random lower case string
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
@@ -25,6 +54,13 @@ function getRandomSymbol() {
 
 }
   console.log(getRandomSymbol());
+
+
+
+
+
+
+
 
        var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
        var passwordLength = 8;
