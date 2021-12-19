@@ -6,14 +6,14 @@ function generatePassword() {
 }
 
 // Testing js code DOM elements
-const resultEl = document.getElementById("result");
-const lengthEl = document.getElementById("result");
-const uppercaseEl = document.getElementById("result");
-const lowercaseEl = document.getElementById("result");
-const numbersEl = document.getElementById("result");
-const symbolsEl = document.getElementById("result");
-const generateEl = document.getElementById("result");
-const clipboardEl = document.getElementById("result");
+const resultEl = document.getElementById("password");
+const lengthEl = document.getElementById("password");
+const uppercaseEl = document.getElementById("password");
+const lowercaseEl = document.getElementById("password");
+const numbersEl = document.getElementById("password");
+const symbolsEl = document.getElementById("password");
+const generateEl = document.getElementById("password");
+const clipboardEl = document.getElementById("password");
 
 const randomFunc = {
   lower: getRandomLower,
@@ -27,8 +27,7 @@ generateEl.addEventListener("click", () => {
   const hasLower = lowercaseEl.checked;
   const hasUpper = uppercaseEl.checked;
   const hasNumber = numbersEl.checked;
-  const hasLower = lowercaseEl.checked;
-const hasSymbol = symbolsEl.checked;
+  const hasSymbol = symbolsEl.checked;
 
 
 console.log(hasLower, hasUpper, hasNumber, hasSymbol, length);
