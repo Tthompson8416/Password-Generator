@@ -6,10 +6,10 @@ var generateBtn = document.querySelector("#generate");
 // Testing js code DOM elements
 const resultEl = document.getElementById("password");
 const lengthEl = document.getElementById("password");
-const uppercaseEl = document.getElementById("checkbox");
-const lowercaseEl = document.getElementById("checkbox");
-const numbersEl = document.getElementById("checkbox");
-const symbolsEl = document.getElementById("checkbox");
+const uppercaseEl = document.getElementById("checkbox2");
+const lowercaseEl = document.getElementById("checkbox3");
+const numbersEl = document.getElementById("checkbox4");
+const symbolsEl = document.getElementById("checkbox5");
 const generateEl = document.getElementById("password");
 const clipboardEl = document.getElementById("password");
 
@@ -45,6 +45,14 @@ function generatePassword(lower, upper, number, symbol, length) {
  // 3.Loop over length call generator function for each type
 // 4. Add final pw to the pw var and retun
 
+var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       var passwordLength = 8;
+       var password = "";
+       for (var i = 0; i <=passwordLength; ++i) {
+       var randomNumber = Math.floor(Math.random() * chars.passwordLength);
+       password += chars.substring(randomNumber, randomNumber +1);
+      }
+
 let generatePassword = "";
 
 
@@ -53,41 +61,33 @@ const typedCount = lower + upper + number + symbol;
 }
 
 
-// created random lower case string
+// random lower case string
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
-// created random upper case string
+// random upper case string
 function getRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
+// random number string
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
 }
 
+// random symbol string
 function getRandomSymbol() {
   const symbols = "!@#$%^&*";
   return symbols[Math.floor(Math.random() * symbols.length)];
 
 }
+  console.log(getRandomLower());
+  console.log(getRandomUpper());
+  console.log(getRandomNumber());
   console.log(getRandomSymbol());
 
 
-
-
-
-
-
-
-       var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-       var passwordLength = 8;
-       var password = "";
-       for (var i = 0; i <=passwordLength; ++i) {
-       var randomNumber = Math.floor(Math.random() * chars.passwordLength);
-       password += chars.substring(randomNumber, randomNumber +1);
-      }
 
 
 function writePassword() {
