@@ -31,13 +31,27 @@ generateEl.addEventListener("click", () => {
   const hasSymbol = symbolsEl.checked;
 
 
-resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+resultEl.innerText = generatePassword(
+  hasLower, 
+  hasUpper, 
+  hasNumber, 
+  hasSymbol, 
+  length
+  );
 });
 
-//Generate password 
+//Generate password function
 function generatePassword(lower, upper, number, symbol, length) {
+   // 1. Init pw var
+  // 2. Filter out unchecked types
+ // 3.Loop over length call generator function for each type
+// 4. Add final pw to the pw var and retun
 
-}
+let generatePassword = "";
+
+const typedCount = lower + upper + number + symbol;
+
+console.log("typesCount: ", typesCount);
 
 
 // created random lower case string
