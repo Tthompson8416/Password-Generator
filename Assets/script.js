@@ -24,12 +24,22 @@ function generatePassword() {
 const chosenchars = []
   const symbolArray = ['!', '@', '#', '$','%','^','&','*'];
   const lowerArray = ['a', 'b', 'c'];
-  const upperarray = ['D', 'E', 'F'];
+  const upperArray = ['D', 'E', 'F'];
 symbol = symbolsEl.checked
-console.log(symbol)
+lower = lowercaseEl.checked
+
   if (symbol === true)  {
     chosenchars.push(symbolArray)
   }
+
+  if (lower === true) {
+    chosenchars.push(lowerArray)
+  }
+
+  if (upper === true) {
+    chosenchars.push(upperArray)
+  }
+
   console.log('hello');
   console.log(chosenchars);
 
