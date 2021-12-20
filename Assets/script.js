@@ -11,39 +11,35 @@ const lowercaseEl = document.getElementById("checkbox3");
 const numbersEl = document.getElementById("checkbox4");
 const symbolsEl = document.getElementById("checkbox5");
 const generateEl = document.getElementById("password");
+let lower;
+let upper;
+let number;
+let symbol;
+let length;
 
 console.log('Happy');
 
-
-
-resultEl.innerText = generatePassword(
-  hasLower, 
-  hasUpper, 
-  hasNumber, 
-  hasSymbol, 
-  length
-  );
-
-  console.log('Result')
-
-
 //Generate password function
-function generatePassword(lower, upper, number, symbol, length) {
+function generatePassword() {
 const chosenchars = []
-  const symbolArray = ['!', '@', '#', '$','%','^','&','*']
+  const symbolArray = ['!', '@', '#', '$','%','^','&','*'];
+  const lowerArray = ['a', 'b', 'c'];
+  const upperarray = ['D', 'E', 'F'];
+
   if (symbol === true)  {
     chosenchars.push(symbolArray)
-    console.log('hello');
-}
+  }
+  console.log('hello');
 
-// var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//        let passwordLength = 8;
-//        let password = "";
-//        for (var i = 0; i <=passwordLength; ++i) {
-//        let randomNumber = Math.floor(Math.random() * chars.passwordLength);
-//        password += chars.substring(randomNumber, randomNumber +1);
-//        return password;
-//        }
+
+ var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+       let passwordLength = 8;
+       let password = "";
+       for (var i = 0; i <=passwordLength; ++i) {
+       let randomNumber = Math.floor(Math.random() * chars.passwordLength);
+       password += chars.substring(randomNumber, randomNumber +1);
+       return password;
+       }
 
 console.log(chosenchars);
 
