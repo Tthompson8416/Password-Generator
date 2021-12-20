@@ -6,8 +6,8 @@ var generateBtn = document.querySelector("#generate");
 // Testing js code DOM elements
 const resultEl = document.getElementById("password");
 const lengthEl = document.getElementById("checkbox1");
-const uppercaseEl = document.getElementById("checkbox2");
-const lowercaseEl = document.getElementById("checkbox3");
+const lowercaseEl = document.getElementById("checkbox2");
+const uppercaseEl = document.getElementById("checkbox3");
 const numbersEl = document.getElementById("checkbox4");
 const symbolsEl = document.getElementById("checkbox5");
 const generateEl = document.getElementById("password");
@@ -22,11 +22,19 @@ console.log('Happy');
 //Generate password function
 function generatePassword() {
 const chosenchars = []
+  const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const symbolArray = ['!', '@', '#', '$','%','^','&','*'];
-  const lowerArray = ['a', 'b', 'c'];
-  const upperArray = ['D', 'E', 'F'];
-symbol = symbolsEl.checked
+  
+
+
+
 lower = lowercaseEl.checked
+upper = uppercaseEl.checked
+number = numbersEl.checked
+symbol = symbolsEl.checked
+length = lengthEl.checked
 
   if (symbol === true)  {
     chosenchars.push(symbolArray)
@@ -38,6 +46,10 @@ lower = lowercaseEl.checked
 
   if (upper === true) {
     chosenchars.push(upperArray)
+  }
+
+  if (number === true) {
+    chosenchars.push(numberArray)
   }
 
   console.log('hello');
