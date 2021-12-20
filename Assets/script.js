@@ -25,34 +25,36 @@ const chosenchars = []
   const symbolArray = ['!', '@', '#', '$','%','^','&','*'];
   const lowerArray = ['a', 'b', 'c'];
   const upperarray = ['D', 'E', 'F'];
-
+symbol = symbolsEl.checked
+console.log(symbol)
   if (symbol === true)  {
     chosenchars.push(symbolArray)
   }
   console.log('hello');
+  console.log(chosenchars);
 
 
- var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
        let passwordLength = 8;
        let password = "";
        for (var i = 0; i <=passwordLength; ++i) {
-       let randomNumber = Math.floor(Math.random() * chars.passwordLength);
-       password += chars.substring(randomNumber, randomNumber +1);
-       return password;
+       let randomNumber = Math.floor(Math.random() * chosenchars.length);
+       password += chosenchars[randomNumber]
+       
        }
 
-console.log(chosenchars);
+       return password;
+
 
 return chosenchars[0]
-
+}
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector('#password');
+  
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
-}
