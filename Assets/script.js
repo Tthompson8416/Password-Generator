@@ -18,7 +18,7 @@ let symbol;
 let length;
 
 console.log('Happy');
-
+const passwordLength = (prompt("How long would you like your password to be"))
 //Generate password function
 function generatePassword() {
 const chosenchars = []
@@ -34,7 +34,7 @@ lower = lowercaseEl.checked
 upper = uppercaseEl.checked
 number = numbersEl.checked
 symbol = symbolsEl.checked
-length = lengthEl.checked
+
 
   if (symbol === true)  {
     chosenchars.push(symbolArray)
