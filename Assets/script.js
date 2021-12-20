@@ -15,16 +15,6 @@ const generateEl = document.getElementById("password");
 console.log('Happy');
 
 
-// Generate event listen
-generateEl.addEventListener("checked", () => {
-  const length = +lengthEl.value;
-  const hasLower = lowercaseEl.checked;
-  const hasUpper = uppercaseEl.checked;
-  const hasNumber = numbersEl.checked;
-  const hasSymbol = symbolsEl.checked;
-
-  console.log('Morning');
-
 
 resultEl.innerText = generatePassword(
   hasLower, 
@@ -33,7 +23,9 @@ resultEl.innerText = generatePassword(
   hasSymbol, 
   length
   );
-});
+
+  console.log('Result')
+
 
 //Generate password function
 function generatePassword(lower, upper, number, symbol, length) {
@@ -42,9 +34,7 @@ const chosenchars = []
   if (symbol === true)  {
     chosenchars.push(symbolArray)
     console.log('hello');
-
-
-  }
+}
 
 // var chars =  "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 //        let passwordLength = 8;
@@ -59,7 +49,6 @@ console.log(chosenchars);
 
 return chosenchars[0]
 
-}
 
 function writePassword() {
   var password = generatePassword();
@@ -70,3 +59,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+}
