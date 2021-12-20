@@ -59,7 +59,6 @@ console.log(chosenchars);
 
 return chosenchars[0]
 
-let generatePassword = "";
 }
 
 function writePassword() {
