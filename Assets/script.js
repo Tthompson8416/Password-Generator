@@ -21,7 +21,8 @@ console.log('Happy');
 const passwordLength = (prompt("How long would you like your password to be"))
 //Generate password function
 function generatePassword() {
-const chosenchars = []
+const chosenchars = "1,2,3,a,b,c,D,E,F,!@#";
+
   const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
   const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -37,7 +38,7 @@ symbol = symbolsEl.checked
 
 
   if (symbol === true)  {
-    chosenchars.push(symbolArray)
+    chosenchars += symbolArray
   }
 
   if (lower === true) {
@@ -58,7 +59,7 @@ symbol = symbolsEl.checked
 
        let passwordLength = 8;
        let password = "";
-       for (var i = 0; i <=passwordLength; ++i) {
+       for (var i = 0; i <=passwordLength; i++) {
        let randomNumber = Math.floor(Math.random() * chosenchars.length);
        password += chosenchars[randomNumber]
        
@@ -66,8 +67,6 @@ symbol = symbolsEl.checked
 
        return password;
 
-
-return chosenchars[0]
 }
 
 function writePassword() {
