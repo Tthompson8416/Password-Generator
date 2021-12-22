@@ -78,5 +78,20 @@ function writePassword() {
   passwordText.value = password;
 }
 
+function lengthRange(inputtxt, minlength, maxlength)
+{  	
+   var userInput = inputtxt.value;  
+   if(userInput.length >= minlength && userInput.length <= maxlength)
+      {  	
+        return true;  	
+      }
+   else
+      {  	
+	alert("Please input between " +minlength+ " and " +maxlength+ " characters");  		
+        return false;  	
+      }  
+}
+
+
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
