@@ -17,8 +17,6 @@ let number;
 let symbol;
 let length;
 
-console.log('Happy');
-const passwordLength = (prompt("How long would you like your password to be"))
 //Generate password function
 function generatePassword() {
 const chosenchars = "1,2,3,a,b,c,D,E,F,!@#";
