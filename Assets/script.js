@@ -1,94 +1,62 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+const resultEl = document.getElementById('password');
+const lengthEl = document.getElementById('length');
+const lowercaseEl = document.getElementById('lowercase');
+const uppercaseEl = document.getElementById('uppercase');
+const numbersEl = document.getElementById('numbers');
+const symbolsEl = document.getElementById('symbols');
+const generateEl = document.getElementById('generate');
 
+const randomFunc = {
+  lower: getRandomLower,
+  upper: getRandomUpper,
+  number: getRandomNumber,
+  symbol: getRandomSymbol
+};
 
-
-// Testing js code DOM elements
-const resultEl = document.getElementById("password");
-const lengthEl = document.getElementById("checkbox1");
-const lowercaseEl = document.getElementById("checkbox2");
-const uppercaseEl = document.getElementById("checkbox3");
-const numbersEl = document.getElementById("checkbox4");
-const symbolsEl = document.getElementById("checkbox5");
-const generateEl = document.getElementById("password");
-let lower;
-let upper;
-let number;
-let symbol;
-let length;
-
-//Generate password function
-function generatePassword() {
-const chosenchars = "1,2,3,a,b,c,D,E,F,!@#";
-
-  const lowerArray = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  const upperArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  const numberArray = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const symbolArray = ['!', '@', '#', '$','%','^','&','*'];
+generateEl.addEventListener('click', () => {
+  const length = +lengthEl.value;
+  const hasLower = lowercaseEl.checked;
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numbersEl.checked;
+  const hasSymbol = symbolsEl.checked;
   
+  resultEl.value = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+});
 
-
-
-lower = lowercaseEl.checked
-upper = uppercaseEl.checked
-number = numbersEl.checked
-symbol = symbolsEl.checked
-
-
-  if (symbol === true)  {
-    chosenchars += symbolArray
-  }
-
-  if (lower === true) {
-    chosenchars.push(lowerArray)
-  }
-
-  if (upper === true) {
-    chosenchars.push(upperArray)
-  }
-
-  if (number === true) {
-    chosenchars.push(numberArray)
-  }
-
-  console.log('hello');
-  console.log(chosenchars);
-
-
-       let passwordLength = 8;
-       let password = "";
-       for (var i = 0; i <=passwordLength; i++) {
-       let randomNumber = Math.floor(Math.random() * chosenchars.length);
-       password += chosenchars[randomNumber]
-       
-       }
-
-       return password;
-
-}
-
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
+function generatePassword(lower, upper, number, symbol, length) {
+  let generatedPassword = '';
+  const typesCount = lower + upper + number + symbol;
+  const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
   
-
-  passwordText.value = password;
+  if(typesCount === 0) {
+    return '';
+  }
+  
+  for(let i = 0; i < length; i += typesCount) {
+    typesArr.forEach(type => {
+      const funcName = Object.keys(type)[0];
+      generatedPassword += randomFunc[funcName]();
+    });
+  }
+  
+  const finalPassword = generatedPassword.slice(0, length);
+  
+  return finalPassword;
 }
 
-function lengthRange(inputtxt, minlength, maxlength)
-{  	
-   var userInput = inputtxt.value;  
-   if(userInput.length >= minlength && userInput.length <= maxlength)
-      {  	
-        return true;  	
-      }
-   else
-      {  	
-	alert("Please input between " +minlength+ " and " +maxlength+ " characters");  		
-        return false;  	
-      }  
+function getRandomLower() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
+function getRandomUpper() {
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
+}
 
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
+function getRandomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
+}
+
+function getRandomSymbol() {
+  const symbols = '!@#$%^&*(){}[]=<>/,.';
+  return symbols[Math.floor(Math.random() * symbols.length)];
+}
